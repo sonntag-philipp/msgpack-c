@@ -40,66 +40,112 @@ typedef struct msgpack_packer {
     msgpack_packer_write callback;
 } msgpack_packer;
 
-static void msgpack_packer_init(msgpack_packer* pk, void* data, msgpack_packer_write callback);
+MSGPACK_DLLEXPORT
+void msgpack_packer_init(msgpack_packer* pk, void* data, msgpack_packer_write callback);
 
-static msgpack_packer* msgpack_packer_new(void* data, msgpack_packer_write callback);
-static void msgpack_packer_free(msgpack_packer* pk);
+MSGPACK_DLLEXPORT
+msgpack_packer* msgpack_packer_new(void* data, msgpack_packer_write callback);
+MSGPACK_DLLEXPORT
+void msgpack_packer_free(msgpack_packer* pk);
 
-static int msgpack_pack_char(msgpack_packer* pk, char d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_char(msgpack_packer* pk, char d);
 
-static int msgpack_pack_signed_char(msgpack_packer* pk, signed char d);
-static int msgpack_pack_short(msgpack_packer* pk, short d);
-static int msgpack_pack_int(msgpack_packer* pk, int d);
-static int msgpack_pack_long(msgpack_packer* pk, long d);
-static int msgpack_pack_long_long(msgpack_packer* pk, long long d);
-static int msgpack_pack_unsigned_char(msgpack_packer* pk, unsigned char d);
-static int msgpack_pack_unsigned_short(msgpack_packer* pk, unsigned short d);
-static int msgpack_pack_unsigned_int(msgpack_packer* pk, unsigned int d);
-static int msgpack_pack_unsigned_long(msgpack_packer* pk, unsigned long d);
-static int msgpack_pack_unsigned_long_long(msgpack_packer* pk, unsigned long long d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_signed_char(msgpack_packer* pk, signed char d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_short(msgpack_packer* pk, short d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_int(msgpack_packer* pk, int d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_long(msgpack_packer* pk, long d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_long_long(msgpack_packer* pk, long long d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_unsigned_char(msgpack_packer* pk, unsigned char d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_unsigned_short(msgpack_packer* pk, unsigned short d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_unsigned_int(msgpack_packer* pk, unsigned int d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_unsigned_long(msgpack_packer* pk, unsigned long d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_unsigned_long_long(msgpack_packer* pk, unsigned long long d);
 
-static int msgpack_pack_uint8(msgpack_packer* pk, uint8_t d);
-static int msgpack_pack_uint16(msgpack_packer* pk, uint16_t d);
-static int msgpack_pack_uint32(msgpack_packer* pk, uint32_t d);
-static int msgpack_pack_uint64(msgpack_packer* pk, uint64_t d);
-static int msgpack_pack_int8(msgpack_packer* pk, int8_t d);
-static int msgpack_pack_int16(msgpack_packer* pk, int16_t d);
-static int msgpack_pack_int32(msgpack_packer* pk, int32_t d);
-static int msgpack_pack_int64(msgpack_packer* pk, int64_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_uint8(msgpack_packer* pk, uint8_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_uint16(msgpack_packer* pk, uint16_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_uint32(msgpack_packer* pk, uint32_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_uint64(msgpack_packer* pk, uint64_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_int8(msgpack_packer* pk, int8_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_int16(msgpack_packer* pk, int16_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_int32(msgpack_packer* pk, int32_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_int64(msgpack_packer* pk, int64_t d);
 
-static int msgpack_pack_fix_uint8(msgpack_packer* pk, uint8_t d);
-static int msgpack_pack_fix_uint16(msgpack_packer* pk, uint16_t d);
-static int msgpack_pack_fix_uint32(msgpack_packer* pk, uint32_t d);
-static int msgpack_pack_fix_uint64(msgpack_packer* pk, uint64_t d);
-static int msgpack_pack_fix_int8(msgpack_packer* pk, int8_t d);
-static int msgpack_pack_fix_int16(msgpack_packer* pk, int16_t d);
-static int msgpack_pack_fix_int32(msgpack_packer* pk, int32_t d);
-static int msgpack_pack_fix_int64(msgpack_packer* pk, int64_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_uint8(msgpack_packer* pk, uint8_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_uint16(msgpack_packer* pk, uint16_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_uint32(msgpack_packer* pk, uint32_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_uint64(msgpack_packer* pk, uint64_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_int8(msgpack_packer* pk, int8_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_int16(msgpack_packer* pk, int16_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_int32(msgpack_packer* pk, int32_t d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_fix_int64(msgpack_packer* pk, int64_t d);
 
-static int msgpack_pack_float(msgpack_packer* pk, float d);
-static int msgpack_pack_double(msgpack_packer* pk, double d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_float(msgpack_packer* pk, float d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_double(msgpack_packer* pk, double d);
 
-static int msgpack_pack_nil(msgpack_packer* pk);
-static int msgpack_pack_true(msgpack_packer* pk);
-static int msgpack_pack_false(msgpack_packer* pk);
+MSGPACK_DLLEXPORT
+int msgpack_pack_nil(msgpack_packer* pk);
+MSGPACK_DLLEXPORT
+int msgpack_pack_true(msgpack_packer* pk);
+MSGPACK_DLLEXPORT
+int msgpack_pack_false(msgpack_packer* pk);
 
-static int msgpack_pack_array(msgpack_packer* pk, size_t n);
+MSGPACK_DLLEXPORT
+int msgpack_pack_array(msgpack_packer* pk, size_t n);
 
-static int msgpack_pack_map(msgpack_packer* pk, size_t n);
+MSGPACK_DLLEXPORT
+int msgpack_pack_map(msgpack_packer* pk, size_t n);
 
-static int msgpack_pack_str(msgpack_packer* pk, size_t l);
-static int msgpack_pack_str_body(msgpack_packer* pk, const void* b, size_t l);
+MSGPACK_DLLEXPORT
+int msgpack_pack_str(msgpack_packer* pk, size_t l);
+MSGPACK_DLLEXPORT
+int msgpack_pack_str_body(msgpack_packer* pk, const void* b, size_t l);
 
-static int msgpack_pack_v4raw(msgpack_packer* pk, size_t l);
-static int msgpack_pack_v4raw_body(msgpack_packer* pk, const void* b, size_t l);
+MSGPACK_DLLEXPORT
+int msgpack_pack_v4raw(msgpack_packer* pk, size_t l);
+MSGPACK_DLLEXPORT
+int msgpack_pack_v4raw_body(msgpack_packer* pk, const void* b, size_t l);
 
-static int msgpack_pack_bin(msgpack_packer* pk, size_t l);
-static int msgpack_pack_bin_body(msgpack_packer* pk, const void* b, size_t l);
+MSGPACK_DLLEXPORT
+int msgpack_pack_bin(msgpack_packer* pk, size_t l);
+MSGPACK_DLLEXPORT
+int msgpack_pack_bin_body(msgpack_packer* pk, const void* b, size_t l);
 
-static int msgpack_pack_ext(msgpack_packer* pk, size_t l, int8_t type);
-static int msgpack_pack_ext_body(msgpack_packer* pk, const void* b, size_t l);
+MSGPACK_DLLEXPORT
+int msgpack_pack_ext(msgpack_packer* pk, size_t l, int8_t type);
+MSGPACK_DLLEXPORT
+int msgpack_pack_ext_body(msgpack_packer* pk, const void* b, size_t l);
 
-static int msgpack_pack_timestamp(msgpack_packer* pk, const msgpack_timestamp* d);
+MSGPACK_DLLEXPORT
+int msgpack_pack_timestamp(msgpack_packer* pk, const msgpack_timestamp* d);
 
 MSGPACK_DLLEXPORT
 int msgpack_pack_object(msgpack_packer* pk, msgpack_object d);
